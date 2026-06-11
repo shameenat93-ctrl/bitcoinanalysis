@@ -167,7 +167,7 @@
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Employees</a></li>
-            <li><a href="#">Reports</a></li>
+            <li><a href="/reports">Reports</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
@@ -189,38 +189,33 @@
             </ul>
 
         </div>
+<div class="main-content">
 
-        <!-- Main Content -->
-        <div class="main-content">
+    <h1>Employee Report</h1>
 
-            <h1>Welcome to Dashboard</h1>
+    <p>Employee details loaded from PostgreSQL database.</p>
 
-            <p>Manage employees and view reports.</p>
+    <table>
 
-            <!-- Summary Cards -->
-            <div class="cards">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Salary</th>
+        </tr>
 
-                <div class="card">
-                    <h3>Total Employees</h3>
-                    <p>125</p>
-                </div>
+        {% for emp in employees %}
+        <tr>
+            <td>{{ emp[0] }}</td>
+            <td>{{ emp[1] }}</td>
+            <td>{{ emp[2] }}</td>
+            <td>{{ emp[3] }}</td>
+        </tr>
+        {% endfor %}
 
-                <div class="card">
-                    <h3>Departments</h3>
-                    <p>8</p>
-                </div>
+    </table>
 
-                <div class="card">
-                    <h3>Projects</h3>
-                    <p>15</p>
-                </div>
-
-                <div class="card">
-                    <h3>Active Users</h3>
-                    <p>72</p>
-                </div>
-
-            </div>
+</div>
 
             <!-- Employee Table -->
             <table>
@@ -261,7 +256,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2026 Employee Management System</p>
+        <p>&copy; 2026  Management System</p>
     </div>
 
 </body>
