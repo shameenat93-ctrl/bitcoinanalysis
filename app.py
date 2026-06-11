@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import psycopg2
+import os
 Database_url=os.getenv("DATABASE_URL")
 
 app = Flask(__name__)
